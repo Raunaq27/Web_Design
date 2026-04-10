@@ -1,0 +1,170 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+
+  background-image: url("bgImg.webp");
+  background-repeat: repeat;
+  background-attachment: fixed; /* creates parallax effect */
+  background-position: center;
+  background-size: 5%;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+}
+
+ul li {
+  float: left;
+}
+
+
+ul li a {
+  display: inline-block;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+
+}
+
+a.active {
+  display: block;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+
+}
+
+
+ul li a:hover {
+  background-color: rgb(0, 0, 0);
+  color: #ffffff;
+}
+
+/* 1. Create a wrapper in your HTML around the sidebar and mainContent */
+.container {
+    display: flex;       /* This activates the flex layout */
+    flex-wrap: nowrap;   /* Keeps them on the same line */
+    gap: 10px;           /* Adds space between sidebar and content */
+    align-items: flex-start;
+}
+
+/* 2. Update your sidebar */
+div.sidebar {
+  flex: 1; /* Takes up 1 unit of space (approx 20-25%) */
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 10px 10px black;
+  padding: 1em;
+  margin: 1em;
+  border: #111111 5px double;
+}
+
+/* 3. Update your main content */
+div.mainContent {
+  flex: 3; /* Takes up 3 units of space (approx 75%) */
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 10px 10px black;
+  padding: 1em;
+  margin: 1em;
+  border: #111111 5px outset;
+}
+
+img{
+  width: auto;
+  height: auto;
+  
+}
+table,td,th{
+  border: #111111 2px solid;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style for the form container */
+.styled-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Styled Inputs */
+input[type="email"], 
+input[type="password"] {
+    padding: 12px;
+    font-size: 1rem;
+    background: white;
+    border: 3px solid #111; /* Matching your heavy border style */
+    box-shadow: 4px 4px 0px #111; /* Subtle version of your main box-shadow */
+    outline: none;
+}
+
+input:focus {
+    background-color: #fff9c4; /* Slight highlight when typing */
+    box-shadow: 2px 2px 0px #111;
+    transform: translate(2px, 2px);
+}
+
+/* Radio buttons spacing */
+.radio-group {
+    display: flex;
+    gap: 20px;
+    padding: 10px 0;
+}
+
+/* Button Styling */
+.submit-btn {
+    padding: 15px;
+    background: #111;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    box-shadow: 6px 6px 0px #888;
+    transition: 0.2s;
+}
+
+.submit-btn:hover {
+    background: #444;
+    transform: scale(1.02);
+}
+
+.submit-btn:active {
+    transform: translate(4px, 4px);
+    box-shadow: none;
+}
+.news-item {
+    margin-bottom: 2rem;
+}
+
+.news-item h2 {
+    color: #111;
+    margin-bottom: 5px;
+}
+
+.news-item .date {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+hr {
+    border: 0;
+    border-top: 3px double #111; /* Matches your sidebar/mainContent borders */
+    margin: 20px 0;
+}
