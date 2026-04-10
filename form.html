@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login Form</title>
+    <link href="style/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <ul class="navbar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="new.html">New</a></li>
+        <li><a class="active">Form</a></li>
+    </ul>
+    <div class="container">
+        <div class="mainContent">
+            <h1>Account Login</h1>
+            <p>Please enter your credentials to access the secure portal.</p>
+
+            <form name="myForm" onsubmit="return formCheck()" class="styled-form">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="name@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="••••••••" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Gender Selection</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="gender" value="Male"> Male</label>
+                        <label><input type="radio" name="gender" value="Female"> Female</label>
+                        <label><input type="radio" name="gender" value="Other"> Other</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Authorize Access</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function formCheck() {
+            let email = document.myForm.email.value;
+            let pass = document.myForm.password.value;
+            let gender = document.querySelector('input[name="gender"]:checked');
+
+            // The 'required' attribute in HTML handles most of this, 
+            // but custom validation is good for specific logic.
+            if (pass.length < 8) {
+                alert("Security Alert: Password must be at least 8 characters.");
+                return false;
+            }
+
+            if (!gender) {
+                alert("Identity Required: Please select a gender.");
+                return false;
+            }
+
+            alert("Access Granted. Welcome back!");
+            return true;
+        }
+    </script>
+    </div>
+</body>
+
+</html>
